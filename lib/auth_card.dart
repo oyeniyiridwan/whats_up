@@ -105,6 +105,24 @@ class _AuthCardState extends State<AuthCard>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Text(
+              "What's Up",
+              style: TextStyle(
+                  color: Colors.greenAccent,
+                  fontSize: 50,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold),
+            ),
+            Icon(
+              Icons.messenger,
+              color: Colors.white,
+            )
+          ],
+        ),
         Flexible(
           flex: 1,
           child: AnimatedContainer(
@@ -311,7 +329,7 @@ class _AuthCardState extends State<AuthCard>
                                 style: TextStyle(
                                     color: _select == Select.login
                                         ? Colors.grey
-                                        : Colors.green),
+                                        : Colors.greenAccent),
                               ),
                               onPressed: () {
                                 if (_select == Select.signup &&
@@ -329,7 +347,7 @@ class _AuthCardState extends State<AuthCard>
                                 style: TextStyle(
                                     color: _select == Select.signup
                                         ? Colors.grey
-                                        : Colors.green),
+                                        : Colors.greenAccent),
                               ),
                               onPressed: () {
                                 if (_select == Select.login &&

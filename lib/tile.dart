@@ -20,8 +20,8 @@ class _TileState extends State<Tile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: GestureDetector(
+      padding: const EdgeInsets.all(5.0),
+      child: InkWell(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => Chat(
@@ -29,17 +29,23 @@ class _TileState extends State<Tile> {
                     username: widget.username,
                   )));
         },
-        child: ListTile(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          leading: CircleAvatar(
-            backgroundImage: NetworkImage(widget.imageUrl),
-            radius: 25,
-          ),
-          title: Text(widget.username),
+        child: Card(
+          elevation: 5,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ListTile(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(widget.imageUrl),
+                radius: 25,
+              ),
+              title: Text(widget.username),
 
-          // color: Colors.blueGrey,
-          // child: Text(widget.message),
+              // color: Colors.blueGrey,
+              // child: Text(widget.message),
+            ),
+          ),
         ),
       ),
     );

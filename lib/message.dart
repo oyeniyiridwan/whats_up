@@ -26,7 +26,7 @@ class Message extends StatelessWidget {
                   padding: const EdgeInsets.only(
                       top: 8, left: 8, right: 8, bottom: 20),
                   child: Card(
-                    color: isMe ? Colors.blueGrey : Colors.grey,
+                    color: isMe ? Colors.lime : Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                     child: Container(
@@ -52,22 +52,24 @@ class Message extends StatelessWidget {
                   height: 15,
                   width: 30,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(isMe ? 40 : 0),
-                          bottomLeft: Radius.circular(isMe ? 0 : 40)),
-                      shape: BoxShape.rectangle,
-                      color: isMe ? Colors.blueGrey : Colors.grey),
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(isMe ? 40 : 0),
+                        bottomLeft: Radius.circular(isMe ? 0 : 40)),
+                    shape: BoxShape.rectangle,
+                    color: isMe ? Colors.lime : Colors.white,
+                  ),
                 ),
               ),
               Positioned(
-                bottom: isMe ? 0 : 10,
-                right: isMe ? 10 : 15,
+                bottom: isMe ? 0 : 0,
+                right: isMe ? 0 : 15,
                 child: Row(
                   children: [
                     Text(
                       time,
                       style: TextStyle(
-                          color: isMe ? Colors.blueGrey : Colors.grey),
+                        color: isMe ? Colors.lime : Colors.white,
+                      ),
                     ),
                     if (isMe)
                       Row(
